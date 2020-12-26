@@ -4,7 +4,7 @@ with open("README.md", "r", encoding="utf-8") as fh:
     long_description = fh.read()
 
 setuptools.setup(
-    name="DBConn-pkg-Phornee", # Replace with your own username
+    name="DBConn",
     version="0.0.1",
     author="Ismael Raya",
     author_email="phornee@gmail.com",
