@@ -5,7 +5,7 @@ with open("README.md", "r", encoding="utf-8") as fh:
 
 setuptools.setup(
     name="DBConn",
-    version="0.0.1",
+    version="0.0.2",
     author="Ismael Raya",
     author_email="phornee@gmail.com",
     description="DB management wrapper over mariaDB",
@@ -17,6 +17,9 @@ setuptools.setup(
         "Programming Language :: Python :: 3",
         "License :: OSI Approved :: MIT License",
         "Operating System :: OS Independent",
+    ],
+    install_requires=[
+        'mariadb>=1.0.5'
     ],
     python_requires='>=3.6',
 )
