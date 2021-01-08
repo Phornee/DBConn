@@ -32,8 +32,8 @@ class homeTelemetryDB:
             self.conn = mariadb.connect(
                 user="pi",
                 password="i6B#Z*5Afvre",
-                host="192.168.0.3",
-                port=3307,
+                host="192.168.0.14",
+                port=3306,
                 database="hometelemetry"
 
             )
