@@ -1,1 +1,1 @@
-from .phorneedbutils.hometelemetry_db import homeTelemetryDB, DBOpenException, DBGetLockException, DBReleaseLockException
+from .dbutils_phornee.hometelemetry_db import homeTelemetryDB, DBOpenException, DBGetLockException, DBReleaseLockException
