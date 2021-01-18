@@ -4,14 +4,14 @@ with open("README.md", "r", encoding="utf-8") as fh:
     long_description = fh.read()
 
 setuptools.setup(
-    name="phorneedbutils",
-    version="0.0.2",
+    name="dbutils_phornee",
+    version="0.0.3",
     author="Ismael Raya",
     author_email="phornee@gmail.com",
     description="DB management wrapper over mariaDB",
     long_description=long_description,
     long_description_content_type="text/markdown",
-    url="https://github.com/Phornee/phorneedbutils",
+    url="https://github.com/Phornee/dbutils_phornee",
     packages=setuptools.find_packages(),
     classifiers=[
         "Programming Language :: Python :: 3",
