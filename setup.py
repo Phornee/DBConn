@@ -5,10 +5,10 @@ with open("README.md", "r", encoding="utf-8") as fh:
 
 setuptools.setup(
     name="dbutils_phornee",
-    version="0.0.3",
+    version="0.1.0",
     author="Ismael Raya",
     author_email="phornee@gmail.com",
-    description="DB management wrapper over mariaDB",
+    description="DB management wrapper over mariaDB, mongoDB",
     long_description=long_description,
     long_description_content_type="text/markdown",
     url="https://github.com/Phornee/dbutils_phornee",
@@ -19,7 +19,9 @@ setuptools.setup(
         "Operating System :: OS Independent",
     ],
     install_requires=[
-        'mariadb>=1.0.5'
+        'mariadb>=1.0.5',
+        'pymongo>=3.11.3',
+        'dnspython>=2.1.0'
     ],
     python_requires='>=3.6',
 )

@@ -1,54 +1,29 @@
-import sys
-import mariadb
+import pymongo
 from datetime import datetime, timedelta
+from .db_conn import DBConn, DBOpenException, DBGetLockException
 
-class DBOpenException(Exception):
-    def __init__(self, message):
-        # Call the base class constructor with the parameters it needs
-        super().__init__(message)
-
-
-class DBGetLockException(Exception):
-    def __init__(self, message):
-        # Call the base class constructor with the parameters it needs
-        super().__init__(message)
-
-
-class DBReleaseLockException(Exception):
-    def __init__(self, message):
-        # Call the base class constructor with the parameters it needs
-        super().__init__(message)
-
-
-class homeTelemetryDB:
+class MongoDBConn(DBConn):
 
     def __init__(self):
-        self.conn = None
+        super().__init__()
 
-    def openConn(self, autocommit=True):
+    def openConn(self, params, autocommit=True):
         """"""
-        # Connect to MariaDB Platform
+        # Connect to MongoDB Platform
         try:
-            self.conn = mariadb.connect(
-                user="pi",
-                password="i6B#Z*5Afvre",
-                host="192.168.0.14",
-                port=3306,
-                database="hometelemetry"
+            self.conn = pymongo.MongoClient(params['connstring'])
 
-            )
-        except mariadb.Error as e:
-            raise DBOpenException(f"Error connecting to MariaDB Platform: {e}")
+        except Exception as e:
+            raise DBOpenException(f"Error connecting to MongoDB Platform: {e}")
 
         self.conn.autocommit = autocommit
 
-        return self.conn
-
-    def getConn(self):
-        return self.conn
-
     def closeConn(self):
         self.conn.close()
+
+    def insert(self, table, params):
+        mycollection = self.conn["hometelemetry"][table]
+        mycollection.insert_one(params)
 
     def getLock(self, lockname):
         try:
