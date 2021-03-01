@@ -5,7 +5,7 @@ with open("README.md", "r", encoding="utf-8") as fh:
 
 setuptools.setup(
     name="dbutils_phornee",
-    version="0.1.0",
+    version="0.1.2",
     author="Ismael Raya",
     author_email="phornee@gmail.com",
     description="DB management wrapper over mariaDB, mongoDB",
@@ -21,7 +21,8 @@ setuptools.setup(
     install_requires=[
         'mariadb>=1.0.5',
         'pymongo>=3.11.3',
-        'dnspython>=2.1.0'
+        'dnspython>=2.1.0',
+        'influxdb_client>=1.14.0'
     ],
     python_requires='>=3.6',
 )

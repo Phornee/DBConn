@@ -27,7 +27,6 @@ class DBConn(ABC):
     def openConn(self, params, autocommit=True):
         pass
 
-    @abstractmethod
     def getConn(self):
         return self.conn
 
