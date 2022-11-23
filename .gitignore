@@ -1,6 +1,5 @@
 /dbutils.egg-info
 /dist/
-/makepypi.bat
 __pycache__/__init__.cpython-38.pyc
 build/lib/dbutils_phornee/__init__.py
 build/lib/dbutils_phornee/db_conn.py
