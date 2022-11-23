@@ -1,3 +1,17 @@
 /dbutils.egg-info
 /dist/
 /makepypi.bat
+__pycache__/__init__.cpython-38.pyc
+build/lib/dbutils_phornee/__init__.py
+build/lib/dbutils_phornee/db_conn.py
+build/lib/dbutils_phornee/influxdb_conn.py
+build/lib/dbutils_phornee/mariadb_conn.py
+build/lib/dbutils_phornee/mongodb_conn.py
+dbutils_phornee/__pycache__/__init__.cpython-38.pyc
+dbutils_phornee/__pycache__/hometelemetry_db.cpython-38.pyc
+dbutils_phornee/__pycache__/hometelemetry_mongo.cpython-38.pyc
+dbutils_phornee.egg-info/dependency_links.txt
+dbutils_phornee.egg-info/PKG-INFO
+dbutils_phornee.egg-info/requires.txt
+dbutils_phornee.egg-info/SOURCES.txt
+dbutils_phornee.egg-info/top_level.txt
