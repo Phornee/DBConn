@@ -1,5 +1,6 @@
 from abc import ABC, abstractmethod
 
+
 class DBOpenException(Exception):
     def __init__(self, message):
         # Call the base class constructor with the parameters it needs
@@ -34,7 +35,7 @@ class DBConn(ABC):
         pass
 
     @abstractmethod
-    def insert(self, table, params):
+    def insert(self, table, rows):
         pass
 
     def getLock(self, lockname):
@@ -42,4 +43,3 @@ class DBConn(ABC):
 
     def releaseLock(self, lockname):
         raise
-

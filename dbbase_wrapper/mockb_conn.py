@@ -3,22 +3,36 @@ from datetime import datetime
 from influxdb_client import InfluxDBClient, Point, WritePrecision
 from influxdb_client.client.write_api import SYNCHRONOUS
 
+
 class InfluxDBConn(DBConn):
+    db_tables = None
 
     def __init__(self):
         super().__init__()
 
     def openConn(self, params, autocommit=True):
-        token = params['token']
-        self.org = params['org']
-        self.bucket = params['bucket']
-
-        self.conn = InfluxDBClient(url=params['url'], token=token)
+        db_tables = {}    # Nothing to do here but creating the tables dictionaty
 
     def closeConn(self):
-        self.conn.close()
+        pass   # Nothing to do here
 
-    def insert(self, table, params):
+    def insert(self, table, rows):
+
+
+ [
+                    {
+                        "measurement": "piwaterflow",
+                        "tags": {
+                            "action": action,
+                            "forced": forced
+                        },
+                        "time": datetime.utcnow(),
+                        "fields": {
+                            "fake": 0
+                        }
+                    }
+                ]
+
         write_api = self.conn.write_api(write_options=SYNCHRONOUS)
 
         point = Point(table)\
